@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D79ED691CC6CA3B00C4265C"
+               BuildableName = "FitnessNotes.app"
+               BlueprintName = "FitnessNotes"
+               ReferencedContainer = "container:FitnessNotes.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D79ED801CC6CA3B00C4265C"
+               BuildableName = "FitnessNotesTests.xctest"
+               BlueprintName = "FitnessNotesTests"
+               ReferencedContainer = "container:FitnessNotes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D79ED8B1CC6CA3B00C4265C"
+               BuildableName = "FitnessNotesUITests.xctest"
+               BlueprintName = "FitnessNotesUITests"
+               ReferencedContainer = "container:FitnessNotes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5D79ED691CC6CA3B00C4265C"
+            BuildableName = "FitnessNotes.app"
+            BlueprintName = "FitnessNotes"
+            ReferencedContainer = "container:FitnessNotes.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5D79ED691CC6CA3B00C4265C"
+            BuildableName = "FitnessNotes.app"
+            BlueprintName = "FitnessNotes"
+            ReferencedContainer = "container:FitnessNotes.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5D79ED691CC6CA3B00C4265C"
+            BuildableName = "FitnessNotes.app"
+            BlueprintName = "FitnessNotes"
+            ReferencedContainer = "container:FitnessNotes.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
