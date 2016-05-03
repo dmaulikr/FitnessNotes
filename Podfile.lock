@@ -1,10 +1,18 @@
 PODS:
   - Alamofire (3.3.1)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
+  - CocoaLumberjack/Swift (2.3.0):
+    - CocoaLumberjack/Extensions
   - CVCalendar (1.2.9)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - CocoaLumberjack/Swift (= 2.3.0)
   - CVCalendar (~> 1.2.9)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -19,6 +27,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   CVCalendar: 0799256e0bc3b43e83b7e86c0729ce9ff0624cb6
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 

@@ -7,25 +7,24 @@
 //
 
 import UIKit
-import AudioToolbox
+import CocoaLumberjack
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        DDLogVerbose("Verbose");
+        DDLogDebug("Debug");
+        DDLogInfo("Info");
+        DDLogWarn("Warn");
+        DDLogError("Error");
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func buttonTapped(sender: AnyObject) {
-        
-        
-    }
-    
-
 
 }
 

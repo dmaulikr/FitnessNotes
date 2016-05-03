@@ -7,7 +7,8 @@ link_with 'FitnessNotes', 'FitnessNotesDev'
 target 'FitnessNotes' do
 pod 'CVCalendar', '~> 1.2.9'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-pod 'Alamofire', '~> 3.0'
+pod 'Alamofire', '~>3.0'
+pod 'CocoaLumberjack/Swift', '2.3.0'
 end
 
 target 'FitnessNotesTests' do
@@ -17,4 +18,3 @@ end
 target 'FitnessNotesUITests' do
 
 end
-

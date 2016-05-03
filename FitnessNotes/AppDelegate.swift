@@ -8,25 +8,38 @@
 
 import UIKit
 import CoreData
+import CocoaLumberjack
 
 
-#if DEVELOPMENT
-let SERVER_URL = "http://dev.server.com/api/"
-let API_TOKEN = "DI2023409jf90ew"
-#else
-let SERVER_URL = "http://prod.server.com/api/"
-let API_TOKEN = "71a629j0f090232"
-#endif
+//#if DEVELOPMENT
+//let SERVER_URL = "http://dev.server.com/api/"
+//let API_TOKEN = "DI2023409jf90ew"
+//#else
+//let SERVER_URL = "http://prod.server.com/api/"
+//let API_TOKEN = "71a629j0f090232"
+//#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        print("\(SERVER_URL)")
+        
+        //configure the log system
+        let logFormatter = CustomLogFormatter()
+        DDASLLogger.sharedInstance().logFormatter = logFormatter
+        DDTTYLogger.sharedInstance().logFormatter = logFormatter
+        
+        DDLog.addLogger(DDASLLogger.sharedInstance(), withLevel: .Info)
+        DDLog.addLogger(DDTTYLogger.sharedInstance(), withLevel: .Debug)
+        
+        let fileLogger = DDFileLogger()
+        fileLogger.rollingFrequency = 60 * 60 * 24
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.addLogger(fileLogger, withLevel: .Info)
+        
         return true
     }
 
