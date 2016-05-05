@@ -12,7 +12,17 @@ import CoreDataHelpers
 
 final class Exercise: ManagedObject {
     @NSManaged var name: String
-    @NSManaged var note: String
+    @NSManaged var note: String?
+    @NSManaged var bodyPart: BodyPart
+    
+    static func insertExerciseIntoContext(moc: NSManagedObjectContext, name: String, note: String? = nil, bodyPart: BodyPart) ->Exercise {
+        let exerciseEntity: Exercise = moc.insertObject()
+        exerciseEntity.name = name
+        exerciseEntity.note = note
+        exerciseEntity.bodyPart = bodyPart
+        
+        return exerciseEntity
+    }
 }
 
 
@@ -20,6 +30,7 @@ extension Exercise: KeyCodable {
     enum Keys: String {
         case name = "name"
         case note = "note"
+        case bodyPart = "bodyPart"
     }
 }
 

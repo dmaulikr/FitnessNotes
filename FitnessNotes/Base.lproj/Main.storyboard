@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ro3-pK-fKx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calendar Appearance Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FitnessNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HistoryViewController" customModule="FitnessNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,178 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqd-F9-3Cb" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="20" y="64" width="560" height="24"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="X9Y-YO-RJp"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="X9Y-YO-RJp"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="BYZ-38-t0r" id="neF-gp-1L6"/>
+                                </connections>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Vi-dt-Kkz">
+                                <rect key="frame" x="0.0" y="409" width="600" height="142"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="iHS-7x-FwX">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iHS-7x-FwX" id="G2M-d4-F4E">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="c32-4K-tfm" id="nh4-pN-b8y"/>
+                                    <outlet property="delegate" destination="c32-4K-tfm" id="5Ln-yy-V9y"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cW-Xu-qEA" customClass="CVCalendarView" customModule="CVCalendar">
+                                <rect key="frame" x="20" y="101" width="560" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="3on-tC-blw">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="250"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3on-tC-blw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="BYZ-38-t0r" id="mZ3-4l-Zoz"/>
+                                    <outlet property="calendarDelegate" destination="BYZ-38-t0r" id="NB3-OA-iIb"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aqd-F9-3Cb" secondAttribute="trailing" id="0C9-Zs-bk1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4cW-Xu-qEA" secondAttribute="trailing" id="6YB-b6-pbx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Vi-dt-Kkz" secondAttribute="bottom" id="NOM-Wu-2cQ"/>
+                            <constraint firstItem="1Vi-dt-Kkz" firstAttribute="top" secondItem="4cW-Xu-qEA" secondAttribute="bottom" constant="8" id="m4A-lD-CqX"/>
+                            <constraint firstItem="aqd-F9-3Cb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mOI-AP-Rnc"/>
+                            <constraint firstItem="4cW-Xu-qEA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nTe-zT-blS"/>
+                            <constraint firstItem="aqd-F9-3Cb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nqi-6l-4Ei"/>
+                            <constraint firstItem="1Vi-dt-Kkz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="raL-rI-PdT"/>
+                            <constraint firstItem="4cW-Xu-qEA" firstAttribute="top" secondItem="aqd-F9-3Cb" secondAttribute="bottom" constant="13" id="uVz-Vz-laF">
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Vi-dt-Kkz" secondAttribute="trailing" constant="-20" id="ztg-Z9-dQv"/>
+                        </constraints>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="aqd-F9-3Cb"/>
+                                <include reference="1Vi-dt-Kkz"/>
+                                <include reference="4cW-Xu-qEA"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0C9-Zs-bk1"/>
+                                <include reference="mOI-AP-Rnc"/>
+                                <include reference="nqi-6l-4Ei"/>
+                                <include reference="6YB-b6-pbx"/>
+                                <include reference="nTe-zT-blS"/>
+                                <include reference="uVz-Vz-laF"/>
+                                <include reference="m4A-lD-CqX"/>
+                                <include reference="raL-rI-PdT"/>
+                                <include reference="ztg-Z9-dQv"/>
+                                <include reference="NOM-Wu-2cQ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="History" id="uyG-FM-NL2">
+                        <barButtonItem key="leftBarButtonItem" title="Today" id="gNz-vL-eyG">
+                            <connections>
+                                <action selector="TodayButtonTapped:" destination="BYZ-38-t0r" id="h85-EZ-IXb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zyf-90-izF">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="gti-ow-UOD">
+                                <rect key="frame" x="459" y="8" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                </segments>
+                                <connections>
+                                    <action selector="CalendarViewSegmentTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="mct-1v-XiO"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendarMenuView" destination="aqd-F9-3Cb" id="GiW-dg-AUg"/>
+                        <outlet property="calendarView" destination="4cW-Xu-qEA" id="qdR-lL-251"/>
+                        <outlet property="calendarViewSegment" destination="gti-ow-UOD" id="0Cw-at-zQp"/>
+                        <outlet property="tableView" destination="1Vi-dt-Kkz" id="o2k-Co-Krr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="c32-4K-tfm" customClass="HistoryDataProvider" customModule="FitnessNotes" customModuleProvider="target"/>
             </objects>
+            <point key="canvasLocation" x="2392.5" y="393"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cRL-ky-89b">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ro3-pK-fKx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="o2v-nc-Ru1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xXs-vc-Zfh" kind="relationship" relationship="viewControllers" id="5UR-lB-CZj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIw-4U-XOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="393"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="FZ8-83-7UA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXs-vc-Zfh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" id="M9i-r4-Fgc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Q2-te-iXY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hwt-Qo-bDP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPc-qt-VAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="393"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jkT-Fr-nN5">
+            <objects>
+                <viewController id="CRC-SA-Jyd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oYA-fC-ob4"/>
+                        <viewControllerLayoutGuide type="bottom" id="r0Z-UJ-DMX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yfz-rE-Fza">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPV-tI-9zD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="1133.25"/>
         </scene>
     </scenes>
 </document>

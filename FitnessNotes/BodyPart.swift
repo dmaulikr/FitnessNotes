@@ -12,11 +12,21 @@ import CoreDataHelpers
 
 final class BodyPart: ManagedObject {
     @NSManaged var name: String
+    @NSManaged var exercise: NSSet?
+    
+    static func insertBodyPartIntoContext(moc: NSManagedObjectContext, name: String, exercise: NSSet? = nil) ->BodyPart {
+        let bodyPartEntity: BodyPart = moc.insertObject()
+        bodyPartEntity.name = name
+        bodyPartEntity.exercise = exercise
+        
+        return bodyPartEntity
+    }
 }
 
 extension BodyPart: KeyCodable {
     enum Keys: String {
         case name = "name"
+        case exercise = "exercise"
     }
 }
 
@@ -29,4 +39,7 @@ extension BodyPart: DefaultManagedObjectType {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "name", ascending: false)]
     }
+    
+    
+    
 }

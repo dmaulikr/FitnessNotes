@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5D79ED6E1CC6CA3B00C4265C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79ED6D1CC6CA3B00C4265C /* AppDelegate.swift */; };
-		5D79ED701CC6CA3B00C4265C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79ED6F1CC6CA3B00C4265C /* ViewController.swift */; };
 		5D79ED731CC6CA3B00C4265C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED711CC6CA3B00C4265C /* Main.storyboard */; };
 		5D79ED761CC6CA3B00C4265C /* FitnessNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D79ED741CC6CA3B00C4265C /* FitnessNotes.xcdatamodeld */; };
 		5D79ED781CC6CA3B00C4265C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED771CC6CA3B00C4265C /* Assets.xcassets */; };
@@ -17,6 +16,18 @@
 		5D79ED911CC6CA3B00C4265C /* FitnessNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79ED901CC6CA3B00C4265C /* FitnessNotesUITests.swift */; };
 		5D806E961CD8DFD900377AE3 /* CustomLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806E951CD8DFD900377AE3 /* CustomLogFormatter.swift */; };
 		5D806E971CD8DFD900377AE3 /* CustomLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806E951CD8DFD900377AE3 /* CustomLogFormatter.swift */; };
+		5D806EA31CD94BB200377AE3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EA21CD94BB200377AE3 /* CoreDataStack.swift */; };
+		5D806EA41CD94BB200377AE3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EA21CD94BB200377AE3 /* CoreDataStack.swift */; };
+		5D806EA61CD9580900377AE3 /* JsonToModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EA51CD9580900377AE3 /* JsonToModelParser.swift */; };
+		5D806EA71CD9580900377AE3 /* JsonToModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EA51CD9580900377AE3 /* JsonToModelParser.swift */; };
+		5D806EAB1CD95B3400377AE3 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EAA1CD95B3400377AE3 /* ModelTests.swift */; };
+		5D806EAD1CD965F500377AE3 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EAC1CD965F500377AE3 /* Routine.swift */; };
+		5D806EAE1CD9664D00377AE3 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EAC1CD965F500377AE3 /* Routine.swift */; };
+		5D806EB01CD967BF00377AE3 /* RoutineExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EAF1CD967BF00377AE3 /* RoutineExercise.swift */; };
+		5D806EB71CDA7AC800377AE3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EB61CDA7AC800377AE3 /* HistoryViewController.swift */; };
+		5D806EB81CDA7AC800377AE3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EB61CDA7AC800377AE3 /* HistoryViewController.swift */; };
+		5D806EBD1CDACEC400377AE3 /* HistoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EBC1CDACEC400377AE3 /* HistoryDataProvider.swift */; };
+		5D806EBE1CDACEC400377AE3 /* HistoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EBC1CDACEC400377AE3 /* HistoryDataProvider.swift */; };
 		5DD675781CC6CE1D004CF110 /* ExerciseLog.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DD675771CC6CE1D004CF110 /* ExerciseLog.json */; };
 		5DD675831CC6F790004CF110 /* CoreDataHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD675821CC6F790004CF110 /* CoreDataHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DD6758A1CC6F790004CF110 /* CoreDataHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */; };
@@ -37,9 +48,7 @@
 		5DD675B61CC6FCDB004CF110 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675B51CC6FCDB004CF110 /* BodyPart.swift */; };
 		5DD675B81CC6FF2C004CF110 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675B71CC6FF2C004CF110 /* Exercise.swift */; };
 		5DD675BD1CC7E1F0004CF110 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675BC1CC7E1F0004CF110 /* Utilities.swift */; };
-		5DD675E01CC95F5E004CF110 /* RingerChanged.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD675DF1CC95F5E004CF110 /* RingerChanged.wav */; };
 		5DF2A9661CCFE96C006E3249 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675B71CC6FF2C004CF110 /* Exercise.swift */; };
-		5DF2A9671CCFE96C006E3249 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79ED6F1CC6CA3B00C4265C /* ViewController.swift */; };
 		5DF2A9681CCFE96C006E3249 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675BC1CC7E1F0004CF110 /* Utilities.swift */; };
 		5DF2A9691CCFE96C006E3249 /* FitnessNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D79ED741CC6CA3B00C4265C /* FitnessNotes.xcdatamodeld */; };
 		5DF2A96A1CCFE96C006E3249 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675B51CC6FCDB004CF110 /* BodyPart.swift */; };
@@ -50,7 +59,6 @@
 		5DF2A9711CCFE96C006E3249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED771CC6CA3B00C4265C /* Assets.xcassets */; };
 		5DF2A9721CCFE96C006E3249 /* ExerciseLog.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DD675771CC6CE1D004CF110 /* ExerciseLog.json */; };
 		5DF2A9731CCFE96C006E3249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED711CC6CA3B00C4265C /* Main.storyboard */; };
-		5DF2A9741CCFE96C006E3249 /* RingerChanged.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5DD675DF1CC95F5E004CF110 /* RingerChanged.wav */; };
 		5DF2A9781CCFE96C006E3249 /* CoreDataHelpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D11658381C382FEB92F5F990 /* Pods_FitnessNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119C743679856D2881484549 /* Pods_FitnessNotes.framework */; };
 /* End PBXBuildFile section */
@@ -129,7 +137,6 @@
 		119C743679856D2881484549 /* Pods_FitnessNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitnessNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D79ED6A1CC6CA3B00C4265C /* FitnessNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D79ED6D1CC6CA3B00C4265C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D79ED6F1CC6CA3B00C4265C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D79ED721CC6CA3B00C4265C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D79ED751CC6CA3B00C4265C /* FitnessNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessNotes.xcdatamodel; sourceTree = "<group>"; };
 		5D79ED771CC6CA3B00C4265C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +149,13 @@
 		5D79ED901CC6CA3B00C4265C /* FitnessNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessNotesUITests.swift; sourceTree = "<group>"; };
 		5D79ED921CC6CA3B00C4265C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D806E951CD8DFD900377AE3 /* CustomLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLogFormatter.swift; sourceTree = "<group>"; };
+		5D806EA21CD94BB200377AE3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		5D806EA51CD9580900377AE3 /* JsonToModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonToModelParser.swift; sourceTree = "<group>"; };
+		5D806EAA1CD95B3400377AE3 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		5D806EAC1CD965F500377AE3 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		5D806EAF1CD967BF00377AE3 /* RoutineExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineExercise.swift; sourceTree = "<group>"; };
+		5D806EB61CDA7AC800377AE3 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		5D806EBC1CDACEC400377AE3 /* HistoryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDataProvider.swift; sourceTree = "<group>"; };
 		5DD675771CC6CE1D004CF110 /* ExerciseLog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ExerciseLog.json; path = ../../../../Desktop/ExerciseLog.json; sourceTree = "<group>"; };
 		5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD675821CC6F790004CF110 /* CoreDataHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelpers.h; sourceTree = "<group>"; };
@@ -163,7 +177,6 @@
 		5DD675B51CC6FCDB004CF110 /* BodyPart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
 		5DD675B71CC6FF2C004CF110 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		5DD675BC1CC7E1F0004CF110 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		5DD675DF1CC95F5E004CF110 /* RingerChanged.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RingerChanged.wav; sourceTree = "<group>"; };
 		5DF2A97C1CCFE96C006E3249 /* FitnessNotesDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessNotesDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF2A97D1CCFE96C006E3249 /* FitnessNotesDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FitnessNotesDev-Info.plist"; path = "/Users/yusheng.yang/Dropbox/SunY/FitnessNotes/FitnessNotesDev-Info.plist"; sourceTree = "<absolute>"; };
 		97BE2653F269BA01660F93C7 /* Pods-FitnessNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessNotes/Pods-FitnessNotes.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,8 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				5D79ED6D1CC6CA3B00C4265C /* AppDelegate.swift */,
-				5D79ED6F1CC6CA3B00C4265C /* ViewController.swift */,
 				5D79ED711CC6CA3B00C4265C /* Main.storyboard */,
+				5D806EB51CDA7AB500377AE3 /* ViewController */,
 				5DD675791CC6F5B1004CF110 /* Model */,
 				5DD675761CC6CE11004CF110 /* Resources */,
 				5DD675B91CC7D632004CF110 /* Utilities */,
@@ -269,6 +282,7 @@
 			children = (
 				5D79ED851CC6CA3B00C4265C /* FitnessNotesTests.swift */,
 				5D79ED871CC6CA3B00C4265C /* Info.plist */,
+				5D806EAA1CD95B3400377AE3 /* ModelTests.swift */,
 			);
 			path = FitnessNotesTests;
 			sourceTree = "<group>";
@@ -290,10 +304,18 @@
 			name = Logger;
 			sourceTree = "<group>";
 		};
+		5D806EB51CDA7AB500377AE3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5D806EB61CDA7AC800377AE3 /* HistoryViewController.swift */,
+				5D806EBC1CDACEC400377AE3 /* HistoryDataProvider.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		5DD675761CC6CE11004CF110 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5DD675DF1CC95F5E004CF110 /* RingerChanged.wav */,
 				5D79ED771CC6CA3B00C4265C /* Assets.xcassets */,
 				5DD675771CC6CE1D004CF110 /* ExerciseLog.json */,
 			);
@@ -305,6 +327,8 @@
 			children = (
 				5DD6757A1CC6F6DC004CF110 /* SharedCode */,
 				5D79ED741CC6CA3B00C4265C /* FitnessNotes.xcdatamodeld */,
+				5D806EA21CD94BB200377AE3 /* CoreDataStack.swift */,
+				5D806EA51CD9580900377AE3 /* JsonToModelParser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,6 +338,8 @@
 			children = (
 				5DD675B51CC6FCDB004CF110 /* BodyPart.swift */,
 				5DD675B71CC6FF2C004CF110 /* Exercise.swift */,
+				5D806EAC1CD965F500377AE3 /* Routine.swift */,
+				5D806EAF1CD967BF00377AE3 /* RoutineExercise.swift */,
 			);
 			name = SharedCode;
 			sourceTree = "<group>";
@@ -574,7 +600,6 @@
 				5D79ED781CC6CA3B00C4265C /* Assets.xcassets in Resources */,
 				5DD675781CC6CE1D004CF110 /* ExerciseLog.json in Resources */,
 				5D79ED731CC6CA3B00C4265C /* Main.storyboard in Resources */,
-				5DD675E01CC95F5E004CF110 /* RingerChanged.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +639,6 @@
 				5DF2A9711CCFE96C006E3249 /* Assets.xcassets in Resources */,
 				5DF2A9721CCFE96C006E3249 /* ExerciseLog.json in Resources */,
 				5DF2A9731CCFE96C006E3249 /* Main.storyboard in Resources */,
-				5DF2A9741CCFE96C006E3249 /* RingerChanged.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,13 +742,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D806EAD1CD965F500377AE3 /* Routine.swift in Sources */,
+				5D806EA61CD9580900377AE3 /* JsonToModelParser.swift in Sources */,
 				5DD675B81CC6FF2C004CF110 /* Exercise.swift in Sources */,
-				5D79ED701CC6CA3B00C4265C /* ViewController.swift in Sources */,
+				5D806EBD1CDACEC400377AE3 /* HistoryDataProvider.swift in Sources */,
+				5D806EB71CDA7AC800377AE3 /* HistoryViewController.swift in Sources */,
 				5DD675BD1CC7E1F0004CF110 /* Utilities.swift in Sources */,
 				5D79ED761CC6CA3B00C4265C /* FitnessNotes.xcdatamodeld in Sources */,
 				5DD675B61CC6FCDB004CF110 /* BodyPart.swift in Sources */,
 				5D79ED6E1CC6CA3B00C4265C /* AppDelegate.swift in Sources */,
+				5D806EB01CD967BF00377AE3 /* RoutineExercise.swift in Sources */,
 				5D806E961CD8DFD900377AE3 /* CustomLogFormatter.swift in Sources */,
+				5D806EA31CD94BB200377AE3 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +762,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D79ED861CC6CA3B00C4265C /* FitnessNotesTests.swift in Sources */,
+				5D806EAB1CD95B3400377AE3 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,13 +804,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D806EAE1CD9664D00377AE3 /* Routine.swift in Sources */,
+				5D806EA71CD9580900377AE3 /* JsonToModelParser.swift in Sources */,
 				5DF2A9661CCFE96C006E3249 /* Exercise.swift in Sources */,
-				5DF2A9671CCFE96C006E3249 /* ViewController.swift in Sources */,
 				5DF2A9681CCFE96C006E3249 /* Utilities.swift in Sources */,
+				5D806EB81CDA7AC800377AE3 /* HistoryViewController.swift in Sources */,
 				5DF2A9691CCFE96C006E3249 /* FitnessNotes.xcdatamodeld in Sources */,
 				5DF2A96A1CCFE96C006E3249 /* BodyPart.swift in Sources */,
+				5D806EBE1CDACEC400377AE3 /* HistoryDataProvider.swift in Sources */,
 				5DF2A96B1CCFE96C006E3249 /* AppDelegate.swift in Sources */,
 				5D806E971CD8DFD900377AE3 /* CustomLogFormatter.swift in Sources */,
+				5D806EA41CD94BB200377AE3 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
