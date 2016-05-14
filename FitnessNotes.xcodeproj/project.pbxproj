@@ -51,7 +51,6 @@
 		5DB792A51CE505AF008E616F /* RoutineExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB792A31CE505AF008E616F /* RoutineExerciseSet.swift */; };
 		5DB792A61CE505B7008E616F /* RoutineExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D806EAF1CD967BF00377AE3 /* RoutineExercise.swift */; };
 		5DB792A71CE505C5008E616F /* SegueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB791BB1CDBD6CC008E616F /* SegueHelper.swift */; };
-		5DD675781CC6CE1D004CF110 /* ExerciseLog.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DD675771CC6CE1D004CF110 /* ExerciseLog.json */; };
 		5DD675831CC6F790004CF110 /* CoreDataHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD675821CC6F790004CF110 /* CoreDataHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DD6758A1CC6F790004CF110 /* CoreDataHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */; };
 		5DD675911CC6F790004CF110 /* CoreDataHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD675901CC6F790004CF110 /* CoreDataHelpersTests.swift */; };
@@ -80,10 +79,10 @@
 		5DF2A96E1CCFE96C006E3249 /* CoreDataHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */; };
 		5DF2A9701CCFE96C006E3249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED791CC6CA3B00C4265C /* LaunchScreen.storyboard */; };
 		5DF2A9711CCFE96C006E3249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED771CC6CA3B00C4265C /* Assets.xcassets */; };
-		5DF2A9721CCFE96C006E3249 /* ExerciseLog.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DD675771CC6CE1D004CF110 /* ExerciseLog.json */; };
 		5DF2A9731CCFE96C006E3249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D79ED711CC6CA3B00C4265C /* Main.storyboard */; };
 		5DF2A9781CCFE96C006E3249 /* CoreDataHelpers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D11658381C382FEB92F5F990 /* Pods_FitnessNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119C743679856D2881484549 /* Pods_FitnessNotes.framework */; };
+		EE1E8B721CE6ABC100297869 /* ExerciseLog.json in Resources */ = {isa = PBXBuildFile; fileRef = EE1E8B711CE6ABC100297869 /* ExerciseLog.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,7 +189,6 @@
 		5DB792951CE4CC46008E616F /* RoutineExerciseDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineExerciseDetailTableViewCell.swift; sourceTree = "<group>"; };
 		5DB7929E1CE4DD07008E616F /* RoutineExerciseDetailTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoutineExerciseDetailTableViewHeader.xib; sourceTree = "<group>"; };
 		5DB792A31CE505AF008E616F /* RoutineExerciseSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineExerciseSet.swift; sourceTree = "<group>"; };
-		5DD675771CC6CE1D004CF110 /* ExerciseLog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ExerciseLog.json; path = ../../../../Desktop/ExerciseLog.json; sourceTree = "<group>"; };
 		5DD675801CC6F790004CF110 /* CoreDataHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD675821CC6F790004CF110 /* CoreDataHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelpers.h; sourceTree = "<group>"; };
 		5DD675841CC6F790004CF110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,6 +213,7 @@
 		5DF2A97D1CCFE96C006E3249 /* FitnessNotesDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FitnessNotesDev-Info.plist"; path = "/Users/yusheng.yang/Dropbox/SunY/FitnessNotes/FitnessNotesDev-Info.plist"; sourceTree = "<absolute>"; };
 		97BE2653F269BA01660F93C7 /* Pods-FitnessNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessNotes/Pods-FitnessNotes.release.xcconfig"; sourceTree = "<group>"; };
 		B901BBEEAEFAA8E2BE8AD8CD /* Pods-FitnessNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessNotes/Pods-FitnessNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		EE1E8B711CE6ABC100297869 /* ExerciseLog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExerciseLog.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,8 +391,8 @@
 		5DD675761CC6CE11004CF110 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE1E8B711CE6ABC100297869 /* ExerciseLog.json */,
 				5D79ED771CC6CA3B00C4265C /* Assets.xcassets */,
-				5DD675771CC6CE1D004CF110 /* ExerciseLog.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -675,8 +674,8 @@
 			files = (
 				5D79ED7B1CC6CA3B00C4265C /* LaunchScreen.storyboard in Resources */,
 				5D79ED781CC6CA3B00C4265C /* Assets.xcassets in Resources */,
+				EE1E8B721CE6ABC100297869 /* ExerciseLog.json in Resources */,
 				5DB7929F1CE4DD07008E616F /* RoutineExerciseDetailTableViewHeader.xib in Resources */,
-				5DD675781CC6CE1D004CF110 /* ExerciseLog.json in Resources */,
 				5DB792931CE4C99F008E616F /* RoutineExerciseDetailCell.xib in Resources */,
 				5D79ED731CC6CA3B00C4265C /* Main.storyboard in Resources */,
 			);
@@ -717,7 +716,6 @@
 				5DF2A9701CCFE96C006E3249 /* LaunchScreen.storyboard in Resources */,
 				5DF2A9711CCFE96C006E3249 /* Assets.xcassets in Resources */,
 				5DB792A01CE4DD07008E616F /* RoutineExerciseDetailTableViewHeader.xib in Resources */,
-				5DF2A9721CCFE96C006E3249 /* ExerciseLog.json in Resources */,
 				5DB792941CE4C99F008E616F /* RoutineExerciseDetailCell.xib in Resources */,
 				5DF2A9731CCFE96C006E3249 /* Main.storyboard in Resources */,
 			);

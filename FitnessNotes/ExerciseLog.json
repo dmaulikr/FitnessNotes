@@ -1,0 +1,6 @@
+{
+  "Abs": ["Ab Roller", "Bicycle Crunch", "Crunch", "Decline Crunch", "Hangling Leg Raise", "Incline Twisting Sit-up", "Jackknife", "Reverse Crunch", "Sit Up", "Twisting Sit-Up", "V-Up"],
+  "Biceps": ["Barbell Curl","Cable Curl","Dumbbell Concentration Curl","Dumbell Curl"],
+  "Check": ["Cable Crossover", "Decline Barbell Bench Press", "Flat Barbell Bench Press", "Flat Dumbell Fly", "Incline BarBell Bench Press"],
+  "Legs": ["Barbell Calf Raise", "Barbell Front Squat", "Barbell Glute Bridge", "Barbell Squat"]
+}
