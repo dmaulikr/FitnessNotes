@@ -13,6 +13,7 @@ import CoreDataHelpers
 final class Exercise: ManagedObject {
     @NSManaged var name: String
     @NSManaged var note: String?
+    @NSManaged var type: String
     @NSManaged var bodyPart: BodyPart
     
     static func insertExerciseIntoContext(moc: NSManagedObjectContext, name: String, note: String? = nil, bodyPart: BodyPart) ->Exercise {

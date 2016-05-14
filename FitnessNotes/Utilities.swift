@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension NSURL {
     static var documentUrl: NSURL? {
@@ -42,5 +43,14 @@ extension NSURL {
     static func fileUrl(withName name: String, atRootUrl rootUrl: NSURL) ->NSURL {
         let fileUrl = rootUrl.URLByAppendingPathComponent(name)
         return fileUrl
+    }
+}
+
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
     }
 }

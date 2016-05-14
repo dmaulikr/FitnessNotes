@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        print(NSURL.documentUrl?.absoluteString)
+        
         //CoreDataStack
         coredataStack = CoreDataStack()
         
@@ -44,6 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fileLogger.rollingFrequency = 60 * 60 * 24
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.addLogger(fileLogger, withLevel: .Info)
+        
+        //preload data to the database
+        if !NSUserDefaults.standardUserDefaults().boolForKey("FirstTimeLaunch") {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstTimeLaunch")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            preloadData()
+        }
         
         return true
     }

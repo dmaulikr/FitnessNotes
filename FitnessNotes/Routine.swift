@@ -14,14 +14,16 @@ final class Routine: ManagedObject{
     @NSManaged var name: String
     @NSManaged var createDate: NSDate
     @NSManaged var note: String?
+    @NSManaged var tag: String?
     @NSManaged var exercises: NSSet?
     
-    static func insertRoutineIntoContext(moc: NSManagedObjectContext, name: String, note: String? = nil, exercises: NSSet? = nil) ->Routine {
+    static func insertRoutineIntoContext(moc: NSManagedObjectContext, name: String, note: String? = nil, exercises: NSSet? = nil, tag: String? = nil) ->Routine {
         let entity: Routine = moc.insertObject()
         entity.name = name
         entity.createDate = NSDate()
         entity.note = note
         entity.exercises = exercises
+        entity.tag = tag
         
         return entity
     }
@@ -33,6 +35,7 @@ extension Routine: KeyCodable {
         case note = "note"
         case createDate = "createDate"
         case exercises = "exercises"
+        case tag = "tag"
     }
 }
 

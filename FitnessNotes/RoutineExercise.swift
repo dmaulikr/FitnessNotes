@@ -13,23 +13,21 @@ import CoreDataHelpers
 
 final class RoutineExercise: ManagedObject {
     @NSManaged var name: String
-    @NSManaged var reps: NSNumber
-    @NSManaged var set: NSNumber
-    @NSManaged var weight: NSNumber?
+    @NSManaged var note: String?
     @NSManaged var routine: Routine?
+    @NSManaged var sets: NSSet
     
-    static func insertRoutineExerciseIntoContext(moc: NSManagedObjectContext, name: String, reps: Int = 10, set: Int = 4, weight: Double? = nil, routine: Routine? = nil) ->RoutineExercise {
+    static func insertRoutineExerciseIntoContext(moc: NSManagedObjectContext, name: String, routine: Routine? = nil, note: String? = nil, sets: NSSet? = nil ) ->RoutineExercise {
         let entity: RoutineExercise = moc.insertObject()
         entity.name = name
-        entity.reps = NSNumber(integer: reps)
-        entity.set = NSNumber(integer: set)
         entity.routine = routine
-        if let w = weight {
-             entity.weight = NSNumber(double: w)
+        
+        entity.note = note
+        if let s = sets {
+            entity.sets = s
         } else {
-             entity.weight = nil
+            RoutineExercise.defaultSets(moc, inExercise: entity)
         }
-       
         
         return entity
     }
@@ -39,9 +37,7 @@ final class RoutineExercise: ManagedObject {
 extension RoutineExercise: KeyCodable {
     enum Keys: String {
         case name = "name"
-        case reps = "reps"
-        case set = "set"
-        case weight = "weight"
+        case note = "note"
         case routine = "routine"
     }
 }
@@ -54,6 +50,18 @@ extension RoutineExercise: DefaultManagedObjectType {
     
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "name", ascending: false)]
+    }
+    
+    private static func defaultSets(moc: NSManagedObjectContext, inExercise exercise: RoutineExercise) ->Set<RoutineExerciseSet> {
+        
+        var exerciseSet = Set<RoutineExerciseSet>()
+        
+        for i in 1..<5 {
+            let set = RoutineExerciseSet.insertIntoContext(moc, set: NSNumber(integer: i), exercise: exercise)
+            exerciseSet.insert(set)
+        }
+        
+        return exerciseSet
     }
 }
 
