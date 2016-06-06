@@ -16,11 +16,16 @@ final class RoutineExerciseSet: ManagedObject {
     @NSManaged var reps: NSNumber
     @NSManaged var exercise: RoutineExercise
     
-    static func insertIntoContext(moc: NSManagedObjectContext, set: NSNumber, weight: NSNumber? = nil, reps: NSNumber = NSNumber(integer:10), exercise: RoutineExercise) ->RoutineExerciseSet{
+    static func insertIntoContext(moc: NSManagedObjectContext, set: Int, weight: Double? = nil, reps: Int = 10, exercise: RoutineExercise) ->RoutineExerciseSet{
         let entity: RoutineExerciseSet = moc.insertObject()
-        entity.set = set
-        entity.weight = weight
-        entity.reps = reps
+        
+        entity.set = NSNumber(integer: set)
+        if weight == nil {
+            entity.weight = nil
+        } else {
+            entity.weight = NSNumber(double: weight!)
+        }
+        entity.reps = NSNumber(integer: reps)
         entity.exercise = exercise
         
         return entity

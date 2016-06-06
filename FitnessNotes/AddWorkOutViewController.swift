@@ -41,9 +41,6 @@ class AddWorkOutViewController: UIViewController {
     }
 
     override func viewWillDisappear(animated: Bool) {
-        if moc.hasChanges { 
-            moc.performSaveOrRollback()
-        }
     }
     
     // MARK: - Navigation
@@ -122,12 +119,39 @@ extension AddWorkOutViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        let routine = fetchedResultsController.objectAtIndexPath(indexPath) as! Routine
+        let destVC = UIStoryboard(name: "StartWorkout", bundle: nil).instantiateViewControllerWithIdentifier("StartWorkoutNavigationController") as! UINavigationController
+        let startWorkoutVC = destVC.viewControllers[0] as! StartWotkoutMainViewController
+        initStartWorkoutViewController(startWorkoutVC, withRoutine: routine)
+        presentViewController(destVC, animated: true, completion: nil)
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let record = fetchedResultsController.objectAtIndexPath(indexPath) as! Routine
         cell.textLabel?.text = record.name
+    }
+    
+    func initStartWorkoutViewController(viewController: StartWotkoutMainViewController, withRoutine routine: Routine) {
+        
+        let workoutLog = WorkoutLog.insetIntoContext(moc, dateTime: workoutDatePicker.date, duration: 0, routine: routine)
+        //workout Exercise
+        _ = routine.exercises?.map({ (exercise) -> WorkoutExercise in
+            let exe = exercise as! RoutineExercise
+            let workoutExercise = WorkoutExercise.insertIntoContext(moc, exercise: exe, workoutLog: workoutLog)
+            
+            _ = (exercise as! RoutineExercise).sets.map({ (set) -> WorkoutExerciseSet in
+                let s = set as! RoutineExerciseSet
+                return WorkoutExerciseSet.insertIntoContext(moc, reps: s.reps.integerValue, set: s.set.integerValue, exercise: workoutExercise)
+            })
+            
+            return workoutExercise
+        })
+        
+        
+        
+        viewController.workoutLog = workoutLog
     }
     
 }

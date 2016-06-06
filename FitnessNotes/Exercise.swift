@@ -15,6 +15,8 @@ final class Exercise: ManagedObject {
     @NSManaged var note: String?
     @NSManaged var type: String
     @NSManaged var bodyPart: BodyPart
+    @NSManaged var routineExercise: NSSet?
+    @NSManaged var workoutExercise: NSSet?
     
     static func insertExerciseIntoContext(moc: NSManagedObjectContext, name: String, note: String? = nil, bodyPart: BodyPart) ->Exercise {
         let exerciseEntity: Exercise = moc.insertObject()

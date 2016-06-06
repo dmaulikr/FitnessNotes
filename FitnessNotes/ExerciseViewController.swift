@@ -60,7 +60,7 @@ class ExerciseViewController: UIViewController {
     
     @IBAction func saveExerciseButtonTapped(sender: UIBarButtonItem) {
         let routineExercise = selectedExercise.map { (exercise) -> RoutineExercise in
-            return RoutineExercise.insertRoutineExerciseIntoContext(moc, name: exercise.name)
+            return RoutineExercise.insertIntoContext(moc, exercise: exercise)
         }
         
         let userInfo = ["newExercise" : routineExercise]

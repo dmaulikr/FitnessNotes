@@ -169,12 +169,12 @@ extension AddRoutineViewController: UITableViewDelegate, UITableViewDataSource {
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         guard let fetchController = fetchedResultsController else {
-            cell.textLabel?.text = newExercises[indexPath.row].name
+            cell.textLabel?.text = newExercises[indexPath.row].exercise.name
             return
         }
         
         let record = fetchController.objectAtIndexPath(indexPath) as! RoutineExercise
-        cell.textLabel?.text = record.name
+        cell.textLabel?.text = record.exercise.name
     }
     
     

@@ -9,6 +9,8 @@
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" defaultValueString="Weight and Reps" syncable="YES"/>
         <relationship name="bodyPart" maxCount="1" deletionRule="Nullify" destinationEntity="BodyPart" inverseName="exercise" inverseEntity="BodyPart" syncable="YES"/>
+        <relationship name="routineExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RoutineExercise" inverseName="exercise" inverseEntity="RoutineExercise" syncable="YES"/>
+        <relationship name="workoutExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="exercise" inverseEntity="WorkoutExercise" syncable="YES"/>
     </entity>
     <entity name="Routine" representedClassName=".Routine" syncable="YES">
         <attribute name="createDate" attributeType="Date" syncable="YES"/>
@@ -16,10 +18,11 @@
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RoutineExercise" inverseName="routine" inverseEntity="RoutineExercise" syncable="YES"/>
+        <relationship name="workoutLog" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutLog" inverseName="routine" inverseEntity="WorkoutLog" syncable="YES"/>
     </entity>
     <entity name="RoutineExercise" representedClassName=".RoutineExercise" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="routineExercise" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routine" inverseName="exercises" inverseEntity="Routine" syncable="YES"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RoutineExerciseSet" inverseName="exercise" inverseEntity="RoutineExerciseSet" syncable="YES"/>
     </entity>
@@ -29,11 +32,34 @@
         <attribute name="weight" optional="YES" attributeType="Double" syncable="YES"/>
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RoutineExercise" inverseName="sets" inverseEntity="RoutineExercise" syncable="YES"/>
     </entity>
+    <entity name="WorkoutExercise" representedClassName=".WorkoutExercise" syncable="YES">
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercise" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workoutExercise" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkoutExerciseSet" inverseName="exercise" inverseEntity="WorkoutExerciseSet" syncable="YES"/>
+        <relationship name="workoutLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutLog" inverseName="exercise" inverseEntity="WorkoutLog" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutExerciseSet" representedClassName=".WorkoutExerciseSet" syncable="YES">
+        <attribute name="finishFlag" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="set" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutExercise" inverseName="sets" inverseEntity="WorkoutExercise" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutLog" representedClassName=".WorkoutLog" syncable="YES">
+        <attribute name="dateAndTime" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercise" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkoutExercise" inverseName="workoutLog" inverseEntity="WorkoutExercise" syncable="YES"/>
+        <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routine" inverseName="workoutLog" inverseEntity="Routine" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="BodyPart" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Exercise" positionX="142" positionY="-45" width="128" height="103"/>
-        <element name="Routine" positionX="-126" positionY="158" width="128" height="118"/>
-        <element name="RoutineExercise" positionX="63" positionY="143" width="128" height="105"/>
-        <element name="RoutineExerciseSet" positionX="250" positionY="135" width="128" height="105"/>
+        <element name="BodyPart" positionX="-189" positionY="540" width="128" height="75"/>
+        <element name="Exercise" positionX="18" positionY="509" width="128" height="133"/>
+        <element name="Routine" positionX="-216" positionY="126" width="128" height="135"/>
+        <element name="RoutineExercise" positionX="63" positionY="156" width="128" height="103"/>
+        <element name="RoutineExerciseSet" positionX="252" positionY="156" width="128" height="105"/>
+        <element name="WorkoutExercise" positionX="115" positionY="306" width="128" height="105"/>
+        <element name="WorkoutExerciseSet" positionX="295" positionY="291" width="128" height="120"/>
+        <element name="WorkoutLog" positionX="-56" positionY="306" width="128" height="120"/>
     </elements>
 </model>

@@ -12,14 +12,14 @@ import CoreDataHelpers
 
 
 final class RoutineExercise: ManagedObject {
-    @NSManaged var name: String
     @NSManaged var note: String?
+    @NSManaged var exercise: Exercise
     @NSManaged var routine: Routine?
     @NSManaged var sets: NSSet
     
-    static func insertRoutineExerciseIntoContext(moc: NSManagedObjectContext, name: String, routine: Routine? = nil, note: String? = nil, sets: NSSet? = nil ) ->RoutineExercise {
+    static func insertIntoContext(moc: NSManagedObjectContext, exercise: Exercise, routine: Routine? = nil, note: String? = nil, sets: NSSet? = nil ) ->RoutineExercise {
         let entity: RoutineExercise = moc.insertObject()
-        entity.name = name
+        entity.exercise = exercise
         entity.routine = routine
         
         entity.note = note
@@ -36,9 +36,10 @@ final class RoutineExercise: ManagedObject {
 
 extension RoutineExercise: KeyCodable {
     enum Keys: String {
-        case name = "name"
+        case exercise = "exercise"
         case note = "note"
         case routine = "routine"
+        case sets = "sets"
     }
 }
 
@@ -48,16 +49,12 @@ extension RoutineExercise: DefaultManagedObjectType {
         return "RoutineExercise"
     }
     
-    static var defaultSortDescriptors: [NSSortDescriptor] {
-        return [NSSortDescriptor(key: "name", ascending: false)]
-    }
-    
     private static func defaultSets(moc: NSManagedObjectContext, inExercise exercise: RoutineExercise) ->Set<RoutineExerciseSet> {
         
         var exerciseSet = Set<RoutineExerciseSet>()
         
         for i in 1..<5 {
-            let set = RoutineExerciseSet.insertIntoContext(moc, set: NSNumber(integer: i), exercise: exercise)
+            let set = RoutineExerciseSet.insertIntoContext(moc, set: i, exercise: exercise)
             exerciseSet.insert(set)
         }
         

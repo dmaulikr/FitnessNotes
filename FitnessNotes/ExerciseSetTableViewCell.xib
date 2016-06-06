@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xb7-Dd-3zr" customClass="ExerciseSetTableViewCell" customModule="FitnessNotes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xb7-Dd-3zr" id="F8o-Up-GaP">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip0-nf-Ex9">
+                        <rect key="frame" x="28" y="11" width="20" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="kza-vl-oQ9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0p-Gd-NuZ">
+                        <rect key="frame" x="242.5" y="11" width="10" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="vRM-el-hgb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25lbs" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOF-Ym-S5F">
+                        <rect key="frame" x="56" y="0.0" width="178.5" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIU-Tc-G4A">
+                        <rect key="frame" x="288.5" y="10" width="23.5" height="23.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="PIU-Tc-G4A" secondAttribute="height" multiplier="1:1" id="v4K-41-0av"/>
+                        </constraints>
+                        <state key="normal" image="Multiply.png"/>
+                        <connections>
+                            <action selector="checkmarkButtonTapped:" destination="Xb7-Dd-3zr" eventType="touchUpInside" id="p8k-FG-yah"/>
+                        </connections>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="99" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJ5-75-FAa">
+                        <rect key="frame" x="260.5" y="0.0" width="20" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="iAz-dA-dss"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PIU-Tc-G4A" firstAttribute="trailing" secondItem="F8o-Up-GaP" secondAttribute="trailingMargin" id="3ke-OT-x9Q"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="PIU-Tc-G4A" secondAttribute="bottom" constant="2" id="6wC-vZ-0M2"/>
+                    <constraint firstItem="EJ5-75-FAa" firstAttribute="leading" secondItem="b0p-Gd-NuZ" secondAttribute="trailing" constant="8" id="7Ug-bD-sT5"/>
+                    <constraint firstItem="b0p-Gd-NuZ" firstAttribute="centerY" secondItem="F8o-Up-GaP" secondAttribute="centerY" id="IJu-gE-wm4"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nOF-Ym-S5F" secondAttribute="bottom" constant="-8" id="J4e-3t-qgu"/>
+                    <constraint firstItem="nOF-Ym-S5F" firstAttribute="leading" secondItem="Ip0-nf-Ex9" secondAttribute="trailing" constant="8" id="K1H-oZ-Gph"/>
+                    <constraint firstItem="b0p-Gd-NuZ" firstAttribute="leading" secondItem="nOF-Ym-S5F" secondAttribute="trailing" constant="8" id="RCu-8j-ov7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="EJ5-75-FAa" secondAttribute="bottom" constant="-8" id="Wec-ym-AmN"/>
+                    <constraint firstItem="PIU-Tc-G4A" firstAttribute="leading" secondItem="EJ5-75-FAa" secondAttribute="trailing" constant="8" id="Y2w-8g-qqj"/>
+                    <constraint firstItem="nOF-Ym-S5F" firstAttribute="top" secondItem="F8o-Up-GaP" secondAttribute="topMargin" constant="-8" id="a1P-T0-5YU"/>
+                    <constraint firstItem="EJ5-75-FAa" firstAttribute="top" secondItem="F8o-Up-GaP" secondAttribute="topMargin" constant="-8" id="a72-Z5-ySg"/>
+                    <constraint firstItem="EJ5-75-FAa" firstAttribute="trailing" secondItem="F8o-Up-GaP" secondAttribute="trailingMargin" constant="8" id="fM5-PA-VvL"/>
+                    <constraint firstItem="PIU-Tc-G4A" firstAttribute="top" secondItem="F8o-Up-GaP" secondAttribute="topMargin" constant="2" id="iAc-1U-kBu"/>
+                    <constraint firstItem="Ip0-nf-Ex9" firstAttribute="leading" secondItem="F8o-Up-GaP" secondAttribute="leadingMargin" constant="20" id="ptK-cm-0sP"/>
+                    <constraint firstItem="Ip0-nf-Ex9" firstAttribute="centerY" secondItem="F8o-Up-GaP" secondAttribute="centerY" id="xbL-e4-K1m"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="fM5-PA-VvL"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkmarkButton" destination="PIU-Tc-G4A" id="BJF-5C-cMz"/>
+                <outlet property="repsTextField" destination="EJ5-75-FAa" id="HSa-r2-f2E"/>
+                <outlet property="setLabel" destination="Ip0-nf-Ex9" id="d22-rh-JiC"/>
+                <outlet property="weightTextField" destination="nOF-Ym-S5F" id="EK3-KH-nIQ"/>
+            </connections>
+            <point key="canvasLocation" x="314" y="305"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Multiply.png" width="50" height="50"/>
+    </resources>
+</document>

@@ -114,8 +114,8 @@ extension RoutineExerciseDetailViewController: UITableViewDelegate, UITableViewD
     func copySetAtIndexPath(indexPath: NSIndexPath) ->RoutineExerciseSet {
         let lastIndexPath = NSIndexPath(forRow: indexPath.row-1, inSection: indexPath.section)
         let lastSet = fetchedResultsController.objectAtIndexPath(lastIndexPath) as! RoutineExerciseSet
-        let newSetNumber = NSNumber(integer: lastSet.set.integerValue + 1)
-        let newSet = RoutineExerciseSet.insertIntoContext(moc, set: newSetNumber, weight: lastSet.weight, reps: lastSet.reps, exercise: lastSet.exercise)
+
+        let newSet = RoutineExerciseSet.insertIntoContext(moc, set: (lastSet.set.integerValue + 1), weight: lastSet.weight?.doubleValue, reps: lastSet.reps.integerValue, exercise: lastSet.exercise)
         return newSet
     }
     
